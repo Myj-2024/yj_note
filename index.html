@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Yujie的笔记</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="description" content="Yujie的笔记" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
+		<!-- 浏览器图标 -->
+		<link
+			rel="icon"
+			href="https://bu.dusays.com/2025/12/31/6955430e16c78.png"
+			type="image/x-icon" />
+		<link
+			rel="shortcut icon"
+			href="https://bu.dusays.com/2025/12/31/6955430e16c78.png"
+			type="image/x-icon" />
+
+		<!-- 默认主题 -->
+		<link
+			rel="stylesheet"
+			href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" />
+
+		<!-- Google 思源黑体 -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+			rel="stylesheet" />
+
+		<!-- 阿里巴巴普惠体 CDN -->
+		<link
+			rel="stylesheet"
+			href="https://at.alicdn.com/t/c/font_4325772_9801g34om8.css" />
+
+		<!-- 整合所有样式 -->
+		<style>
+			/* ========== 全局基础样式 ========== */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				color: #333;
+				line-height: 1.7;
+				letter-spacing: 0.02em;
+			}
+
+			/* ========== 加载动画 ========== */
+			#app {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 18px;
+				color: #42b983;
+				background-color: #f8f9fa;
+				font-weight: 500;
+			}
+
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			/* ========== Markdown 内容样式 ========== */
+			/* 标题基础样式 */
+			.markdown-section h1,
+			.markdown-section h2,
+			.markdown-section h3,
+			.markdown-section h4,
+			.markdown-section h5 {
+				font-family: 'Noto Sans SC', 'PingFang SC Bold',
+					'Microsoft YaHei Bold', sans-serif !important;
+				font-weight: 700;
+				color: #2c3e50;
+				margin-bottom: 16px;
+				line-height: 1.4;
+			}
+
+			/* 标题个性化样式 */
+			.markdown-section h1 {
+				font-size: 1.8rem;
+				border-bottom: 2px solid #42b983;
+				padding-bottom: 10px;
+				margin-top: 15px;
+				font-weight: 800;
+			}
+
+			.markdown-section h2 {
+				font-size: 1.4rem;
+				border-left: 4px solid #42b983;
+				padding-left: 12px;
+				font-weight: 600;
+			}
+
+			.markdown-section h3 {
+				font-size: 1.1rem;
+				color: #34495e;
+				font-weight: 400;
+				padding-bottom: 5px;
+			}
+
+			.markdown-section h4 {
+				font-size: 1rem;
+			}
+			.markdown-section h5 {
+				font-size: 0.9rem;
+			}
+			.markdown-section h6 {
+				font-size: 0.85rem;
+			}
+
+			/* 正文与链接 */
+			.markdown-section p {
+				font-size: 0.85rem;
+				margin-bottom: 14px;
+				color: #444;
+				font-weight: 400;
+			}
+
+			.markdown-section a {
+				color: #42b983;
+				text-decoration: none;
+				border-bottom: 1px solid transparent;
+				transition: all 0.3s ease;
+			}
+
+			.markdown-section a:hover {
+				color: #359469;
+				border-bottom: 1px solid #42b983;
+			}
+
+			/* 列表样式 */
+			.markdown-section ul,
+			.markdown-section ol {
+				margin-bottom: 16px;
+				padding-left: 24px;
+			}
+
+			.markdown-section li {
+				margin-bottom: 8px;
+				font-size: 15px;
+			}
+
+			/* 代码块样式 */
+			.markdown-section pre {
+				margin-bottom: 20px !important;
+				overflow: auto;
+			}
+
+			.markdown-section pre[data-lang] {
+				overflow: auto !important;
+			}
+
+			.markdown-section pre[data-lang] code {
+				margin-top: 5px;
+				overflow: visible;
+				padding: 15px;
+				padding-left: 3px;
+				border-radius: 5px;
+			}
+
+			.markdown-section code,
+			.markdown-section pre code {
+				font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+				font-size: 13px !important;
+				line-height: 1.5 !important;
+			}
+
+			/* 图片样式 */
+			.markdown-section img {
+				box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+				margin: 16px 0 !important;
+				max-width: 100% !important;
+			}
+
+			/* 表格样式 */
+			.markdown-section table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 20px 0;
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+			}
+
+			.markdown-section th {
+				background-color: #f8f9fa;
+				font-weight: 600;
+				text-align: left;
+				padding: 12px 16px;
+				border-bottom: 2px solid #eee;
+			}
+
+			.markdown-section td {
+				padding: 12px 16px;
+				border-bottom: 1px solid #eee;
+			}
+
+			/* 行号样式 */
+			.line-numbers .line-numbers-rows {
+				border-right: 0px solid white;
+				padding: 5px;
+			}
+
+			/* ========== 侧边栏样式 ========== */
+			/* 基础样式 */
+			.sidebar {
+				background-color: #fafafa !important;
+				border-right: 1px solid #eee !important;
+			}
+
+			.sidebar .sidebar-nav {
+				padding: 12px 10px !important;
+			}
+
+			/* 移除列表符号 */
+			.sidebar ul li::before,
+			.sidebar ul li a::before {
+				content: none !important;
+			}
+
+			/* 层级列表间距与缩进 */
+			.sidebar ul,
+			.sidebar ul ul,
+			.sidebar ul ul ul {
+				margin: 0 !important;
+				padding-left: 14px !important;
+			}
+
+			.sidebar ul li {
+				padding: 2px 0 !important;
+				line-height: 1.45 !important;
+				margin: 1px 0 !important;
+			}
+
+			/* 选中项样式 */
+			.sidebar li.active {
+				background: none !important;
+				padding: 3px 8px !important;
+				margin: 2px 0 !important;
+			}
+
+			.sidebar li.active a {
+				color: #2a7d58 !important;
+				font-weight: 400 !important;
+			}
+
+			/* 侧边栏标题 */
+			.sidebar h2,
+			.sidebar h3 {
+				color: #2c3e50 !important;
+				font-weight: 700 !important;
+				margin: 6px 0 4px 0 !important;
+				font-size: 15px !important;
+				padding-bottom: 1px;
+				border-bottom: 1px solid #f0f0f0;
+			}
+
+			.sidebar > h1 {
+				margin: 0 0 8px 0 !important;
+				position: relative;
+			}
+
+			.sidebar > h1::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 1px;
+				background-color: #9e9e9e57;
+				margin-top: 3px;
+			}
+
+			.sidebar > h1 a {
+				color: #42b983 !important;
+				font-size: 22px !important;
+				font-weight: 600 !important;
+				display: inline-block;
+				margin-bottom: 3px !important;
+				margin-top: 3px !important;
+			}
+
+			/* 侧边栏链接 */
+			.sidebar a {
+				font-family: 'PingFang SC', sans-serif !important;
+				color: #666 !important;
+				font-weight: 400 !important;
+				transition: all 0.2s ease;
+				font-size: 13px !important;
+				display: inline-block;
+				padding: 1px 0 !important;
+			}
+
+			.sidebar a:hover {
+				color: #42b983 !important;
+				font-weight: 500 !important;
+			}
+
+			/* ========== 折叠插件样式 ========== */
+			.sidebar .sidebar-nav .collapse-icon {
+				color: #42b983 !important;
+				margin-right: 4px !important;
+				display: inline-block;
+				transition: transform 0.2s ease-in-out;
+				font-size: 12px;
+				line-height: 1;
+			}
+
+			.sidebar .sidebar-nav .collapse-icon.open {
+				transform: rotate(90deg);
+			}
+
+			/* ========== 搜索框样式 ========== */
+			.search {
+				margin-bottom: 0px !important;
+				padding: 0px !important;
+				border-bottom: #ffffff 1px solid !important;
+			}
+			.search input {
+				margin-top: 5px !important;
+				padding: 8px !important;
+				border: 1px solid #e4e4e4 !important;
+				background-color: #f8f9fa !important;
+				font-size: 12px !important;
+				margin-bottom: 2px !important;
+				text-align: center;
+			}
+
+			.search input:focus {
+				border-color: #42b983 !important;
+				box-shadow: 0 0 0 2px rgba(66, 185, 131, 0.2) !important;
+				outline: none !important;
+			}
+
+			/* ========== 导航栏样式 ========== */
+			.navbar {
+				background-color: #fff !important;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+			}
+
+			.navbar-brand {
+				font-family: 'Noto Sans SC', 'PingFang SC Bold', sans-serif !important;
+				font-weight: 700 !important;
+				font-size: 18px !important;
+				color: #42b983 !important;
+			}
+
+			/* ========== 复制代码按钮 ========== */
+			.docsify-copy-code-button {
+				border-radius: 4px !important;
+				background-color: #42b983 !important;
+				color: white !important;
+				font-size: 10px !important;
+				padding: 2px 8px !important;
+				opacity: 0.8;
+				transition: all 0.2s ease;
+			}
+
+			.docsify-copy-code-button:hover {
+				opacity: 1;
+				background-color: #359469 !important;
+			}
+
+			/* ========== 滚动条样式 ========== */
+			::-webkit-scrollbar {
+				width: 8px;
+				height: 8px;
+			}
+
+			::-webkit-scrollbar-track {
+				background: #f1f1f1;
+				border-radius: 4px;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background: #ddd;
+				border-radius: 4px;
+			}
+
+			::-webkit-scrollbar-thumb:hover {
+				background: #42b983;
+			}
+
+			/* ========== 移动端适配 ========== */
+			@media (max-width: 768px) {
+				.markdown-section h1 {
+					font-size: 1.8rem;
+				}
+				.markdown-section h2 {
+					font-size: 1.5rem;
+				}
+				.markdown-section p {
+					font-size: 15px;
+				}
+
+				.sidebar > h1 {
+					font-size: 18px !important;
+				}
+				.sidebar {
+					background-color: #fff !important;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 加载状态 -->
+		<div id="app">
+			<div
+				style="
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				">
+				<div
+					style="
+						width: 40px;
+						height: 40px;
+						border: 3px solid #42b983;
+						border-top: 3px solid transparent;
+						border-radius: 50%;
+						animation: spin 1s linear infinite;
+						margin-bottom: 12px;
+					"></div>
+				<span>加载中...</span>
+			</div>
+		</div>
+
+		<script>
+			window.$docsify = {
+				name: '知识库目录',
+				repo: 'https://github.com/colour008',
+				loadSidebar: true,
+				loadNavbar: true,
+				coverpage: true,
+				maxLevel: 5,
+				subMaxLevel: 4,
+				mergeNavbar: true,
+				/*搜索相关设置*/
+				search: {
+					maxAge: 86400000,
+					paths: 'auto',
+					placeholder: '搜索',
+					placeholder: {
+						'/zh-cn/': '搜索',
+						'/': '输入关键搜索',
+					},
+					noData: '找不到结果',
+					depth: 4,
+					hideOtherSidebarContent: false,
+					namespace: 'Yujie的笔记',
+				},
+				// 平滑滚动
+				scrollToTop: {
+					auto: true,
+					delay: 500,
+				},
+				markdown: {
+					renderer: {
+						code: function (code, lang) {
+							if (lang == 'html') {
+								code = code
+									.replace(/&/g, '&amp;')
+									.replace(/</g, '&lt;')
+									.replace(/>/g, '&gt;')
+									.replace(/"/g, '&quot;')
+									.replace(/'/g, '&#039;');
+							}
+							return (
+								'<pre data-lang="' +
+								lang +
+								'"><code class="line-numbers language-' +
+								lang +
+								'">' +
+								code +
+								'</code></pre>'
+							);
+						},
+					},
+				},
+				plugins: [
+					function (hook, vm) {
+						hook.doneEach(function (html) {
+							Prism.highlightAll();
+						});
+					},
+				],
+			};
+		</script>
+
+		<!-- docsify 核心依赖 -->
+		<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+		<!-- 插件 -->
+		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+		<script src="js\docsify-copy-code.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+	</body>
+</html>
