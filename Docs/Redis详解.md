@@ -1,7 +1,6 @@
 
 # Redis详解
 
-[TOC]
 
 ## 一、Redis 是什么
 
