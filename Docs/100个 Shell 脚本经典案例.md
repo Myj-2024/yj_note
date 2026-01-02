@@ -31,7 +31,7 @@ tar  -czf  log-`date +%Y%m%d`.tar.gz  /var/log
 00  03  *  *  5  /root/logbak.sh
 ```
 
-4）一键部署 LNMP(RPM 包版本)
+## 4）一键部署 LNMP(RPM 包版本)
 
 ```shell
 #!/bin/bash  
