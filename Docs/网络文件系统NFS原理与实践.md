@@ -1,7 +1,3 @@
----
-typora-copy-images-to: ./
----
-
 # 网络文件系统NFS原理与实践
 
 > 本文转载自：公众号【民工哥技术之路】的文章--[玩转企业常见应用与服务系列（一）：网络文件系统 NFS 原理与实践](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247546196&idx=2&sn=eac4b43fe3b8c438c876ec6bc1437645&chksm=e9185048de6fd95eb5f864cd742de9d5f53b5e0aaa273b1cf8d0d170a81b0f5efd5afc2e932e&scene=21#wechat_redirect)
