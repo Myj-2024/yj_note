@@ -1,6 +1,6 @@
 # 100个 Shell 脚本经典案例
 
-##### 1）编写hello world脚本
+## 1）编写hello world脚本
 
 ```shell
 #!/bin/bash  
@@ -8,7 +8,7 @@
 echo "Hello World!"
 ```
 
-##### 2）通过位置变量创建 Linux 系统账户及密码
+## 2）通过位置变量创建 Linux 系统账户及密码
 
 ```shell
 #!/bin/bash  
@@ -18,7 +18,7 @@ useradd    "$1"
 echo "$2"  |  passwd  ‐‐stdin  "$1"
 ```
 
-##### 3）备份日志
+## 3）备份日志
 
 ```shell
 #!/bin/bash  
@@ -45,7 +45,7 @@ systemctl start httpd mariadb
 systemctl enable httpd mariadb
 ```
 
-##### 5）监控内存和磁盘容量，小于给定值时报警
+## 5）监控内存和磁盘容量，小于给定值时报警
 
 ```shell
 #!/bin/bash  
@@ -66,7 +66,7 @@ fi
 done
 ```
 
-##### 6）猜数字游戏
+## 6）猜数字游戏
 
 ```shell
 #!/bin/bash  
@@ -96,7 +96,7 @@ do
 done
 ```
 
-##### 7）检测本机当前用户是否为超级管理员,如果是管理员,则使用 yum 安装 vsftpd,如果不是,则提示您非管理员(使用字串对比版本)
+## 7）检测本机当前用户是否为超级管理员,如果是管理员,则使用 yum 安装 vsftpd,如果不是,则提示您非管理员(使用字串对比版本)
 
 ```shell
 #!/bin/bash  
@@ -110,7 +110,7 @@ else
 fi
 ```
 
-##### 8）检测本机当前用户是否为超级管理员,如果是管理员,则使用 yum 安装 vsftpd,如果不是,则提示您非管理员(使用 UID 数字对比版本)
+## 8）检测本机当前用户是否为超级管理员,如果是管理员,则使用 yum 安装 vsftpd,如果不是,则提示您非管理员(使用 UID 数字对比版本)
 
 ```shell
 #!/bin/bash  
@@ -123,7 +123,7 @@ else
 fi
 ```
 
-##### 9）编写脚本:提示用户输入用户名和密码,脚本自动创建相应的账户及配置密码。如果用户不输入账户名,则提示必须输入账户名并退出脚本;如果用户不输入密码,则统一使用默认的 123456 作为默认密码。
+## 9）编写脚本:提示用户输入用户名和密码,脚本自动创建相应的账户及配置密码。如果用户不输入账户名,则提示必须输入账户名并退出脚本;如果用户不输入密码,则统一使用默认的 123456 作为默认密码。
 
 ```shell
 #!/bin/bash  
@@ -147,7 +147,7 @@ useradd "$user"
 echo "$pass" | passwd ‐‐stdin "$user"
 ```
 
-##### 10）输入三个数并进行升序排序
+## 10）输入三个数并进行升序排序
 
 ```shell
 #!/bin/bash  
@@ -180,7 +180,7 @@ fi
 echo "排序后数据(从小到大)为:$num1,$num2,$num3"
 ```
 
-##### 11）石头、剪刀、布游戏
+## 11）石头、剪刀、布游戏
 
 ```shell
 #!/bin/bash  
@@ -231,7 +231,7 @@ case  $person  in
 esac
 ```
 
-##### 12）编写脚本测试 192.168.4.0/24 整个网段中哪些主机处于开机状态,哪些主机处于关机状态(for 版本)
+## 12）编写脚本测试 192.168.4.0/24 整个网段中哪些主机处于开机状态,哪些主机处于关机状态(for 版本)
 
 ```shell
 #!/bin/bash  
@@ -249,7 +249,7 @@ do
 done
 ```
 
-##### 13）编写脚本测试 192.168.4.0/24 整个网段中哪些主机处于开机状态,哪些主机处于关机状态(while 版本)
+## 13）编写脚本测试 192.168.4.0/24 整个网段中哪些主机处于开机状态,哪些主机处于关机状态(while 版本)
 
 ```shell
 #!/bin/bash  
@@ -268,7 +268,7 @@ do
 done
 ```
 
-##### 14）编写脚本测试 192.168.4.0/24 整个网段中哪些主机处于开机状态,哪些主机处于关机状态(多进程版)
+## 14）编写脚本测试 192.168.4.0/24 整个网段中哪些主机处于开机状态,哪些主机处于关机状态(多进程版)
 
 ```shell
 #!/bin/bash  
@@ -291,7 +291,7 @@ done
 # 这样做的好处是不需要等待ping第一台主机的回应,就可以继续并发ping第二台主机,依次类推。
 ```
 
-##### 15）编写脚本,显示进度条
+## 15）编写脚本,显示进度条
 
 ```shell
 #!/bin/bash  
@@ -309,7 +309,7 @@ killall $0
 echo "拷贝完成"
 ```
 
-##### 16）进度条,动态时针版本；定义一个显示进度的函数,屏幕快速显示|  / ‐ \
+## 16）进度条,动态时针版本；定义一个显示进度的函数,屏幕快速显示|  / ‐ \
 
 ```shell
 #!/bin/bash  
@@ -346,7 +346,7 @@ done
 rotate_line
 ```
 
-##### 17）9*9 乘法表
+## 17）9*9 乘法表
 
 ```shell
 #!/bin/bash  
@@ -361,7 +361,7 @@ do
 done
 ```
 
-##### 18）使用死循环实时显示 eth0 网卡发送的数据包流量
+## 18）使用死循环实时显示 eth0 网卡发送的数据包流量
 
 ```shell
 #!/bin/bash  
@@ -375,7 +375,7 @@ do
 done
 ```
 
-##### 19）使用 user.txt 文件中的人员名单,在计算机中自动创建对应的账户并配置初始密码本脚本执行,需要提前准备一个 user.txt 文件,该文件中包含有若干用户名信息
+## 19）使用 user.txt 文件中的人员名单,在计算机中自动创建对应的账户并配置初始密码本脚本执行,需要提前准备一个 user.txt 文件,该文件中包含有若干用户名信息
 
 ```shell
 #!/bin/bash  
@@ -388,7 +388,7 @@ do
 done
 ```
 
-##### 20）编写批量修改扩展名脚本
+## 20）编写批量修改扩展名脚本
 
 ```shell
 #!/bin/bash  
@@ -402,7 +402,7 @@ do
 done
 ```
 
-##### 21）使用 expect 工具自动交互密码远程其他主机安装 httpd [软件](https://marketing.csdn.net/p/3127db09a98e0723b83b2914d9256174?pId=2782&utm_source=glcblog&spm=1001.2101.3001.7020)
+## 21）使用 expect 工具自动交互密码远程其他主机安装 httpd [软件](https://marketing.csdn.net/p/3127db09a98e0723b83b2914d9256174?pId=2782&utm_source=glcblog&spm=1001.2101.3001.7020)
 
 ```shell
 #!/bin/bash  
@@ -419,7 +419,7 @@ expect "#" {send  "exit\r"}
 EOF
 ```
 
-##### 22）一键部署 LNMP(源码安装版本)
+## 22）一键部署 LNMP(源码安装版本)
 
 ```shell
 #!/bin/bash  
@@ -427,12 +427,12 @@ EOF
 menu()  
 {  
 clear  
-echo "  ##############‐‐‐‐Menu‐‐‐‐##############"  
+echo "  ########‐‐‐‐Menu‐‐‐‐########"  
 echo "# 1. Install Nginx"  
 echo "# 2. Install MySQL"  
 echo "# 3. Install PHP"  
 echo "# 4. Exit Program"  
-echo "  ########################################"  
+echo "  ################"  
 }  
 choice()  
 {  
@@ -558,7 +558,7 @@ do
 done
 ```
 
-##### 23）编写脚本快速克隆 KVM 虚拟机
+## 23）编写脚本快速克隆 KVM 虚拟机
 
 ```shell
 #!/bin/bash  
@@ -610,7 +610,7 @@ virsh define /tmp/myvm.xml &> /dev/null
 echo -e "\e[32;1m[OK]\e[0m"
 ```
 
-##### 24）点名器脚本
+## 24）点名器脚本
 
 ```shell
 #!/bin/bash  
@@ -628,7 +628,7 @@ clear
 done
 ```
 
-##### 25）查看有多少远程的 IP 在连接本机
+## 25）查看有多少远程的 IP 在连接本机
 
 ```shell
 #!/bin/bash  
@@ -642,7 +642,7 @@ done
 netstat -atn  |  awk  '{print $5}'  | awk  '{print $1}' | sort -nr  |  uniq -c
 ```
 
-##### 26）对 100 以内的所有正整数相加求和(1+2+3+4…+100)
+## 26）对 100 以内的所有正整数相加求和(1+2+3+4…+100)
 
 ```shell
 #!/bin/bash  
@@ -656,7 +656,7 @@ done
 echo "总和是:$sum"
 ```
 
-##### 27）统计 13:30 到 14:30 所有访问 apache 服务器的请求有多少个
+## 27）统计 13:30 到 14:30 所有访问 apache 服务器的请求有多少个
 
 ```shell
 #!/bin/bash  
@@ -667,7 +667,7 @@ echo "总和是:$sum"
 awk -F "[ /:]" '$7":"$8>="13:30" && $7":"$8<="14:30"' /var/log/httpd/access_log |wc -l
 ```
 
-##### 28）统计 13:30 到 14:30 所有访问本机 Aapche 服务器的远程 IP 地址是什么
+## 28）统计 13:30 到 14:30 所有访问本机 Aapche 服务器的远程 IP 地址是什么
 
 ```shell
 #!/bin/bash  
@@ -678,7 +678,7 @@ awk -F "[ /:]" '$7":"$8>="13:30" && $7":"$8<="14:30"' /var/log/httpd/access_log 
 awk -F "[ /:]" '$7":"$8>="13:30" && $7":"$8<="14:30"{print $1}' /var/log/httpd/access_log
 ```
 
-##### 29）打印国际象棋棋盘
+## 29）打印国际象棋棋盘
 
 ```shell
 #!/bin/bash  
@@ -703,7 +703,7 @@ do
 done
 ```
 
-##### 30）统计每个远程 IP 访问了本机 apache 几次?
+## 30）统计每个远程 IP 访问了本机 apache 几次?
 
 ```shell
 #!/bin/bash  
@@ -711,7 +711,7 @@ done
 awk  '{ip[$1]++}END{for(i in ip){print ip[i],i}}'  /var/log/httpd/access_log
 ```
 
-##### 31）统计当前 Linux 系统中可以登录计算机的账户有多少个
+## 31）统计当前 Linux 系统中可以登录计算机的账户有多少个
 
 ```shell
 #!/bin/bash  
@@ -722,7 +722,7 @@ grep "bash$" /etc/passwd | wc -l
 awk -f: '/bash$/{x++}end{print x}'  /etc/passwd
 ```
 
-##### 32）统计/var/log 有多少个文件,并显示这些文件名
+## 32）统计/var/log 有多少个文件,并显示这些文件名
 
 ```shell
 #!/bin/bash  
@@ -740,7 +740,7 @@ done
 echo "总文件数量为:$sum"
 ```
 
-##### 33）自动为其他脚本添加解释器信息
+## 33）自动为其他脚本添加解释器信息
 
 ```shell
 Docker+K8s+Jenkins 主流技术全解视频资料【干货免费分享】  
@@ -758,7 +758,7 @@ fi
 vim +2 $1
 ```
 
-##### 34）[自动化](https://ml-summit.org/cloud-member?uid=c1041&spm=1001.2101.3001.7020)部署 varnish 源码包软件
+## 34）[自动化](https://ml-summit.org/cloud-member?uid=c1041&spm=1001.2101.3001.7020)部署 varnish 源码包软件
 
 ```shell
 #!/bin/bash  
@@ -784,7 +784,7 @@ cp /usr/local/varnish/etc/varnish/default.vcl /etc/varnish/
 uuidgen > /etc/varnish/secret
 ```
 
-##### 35）编写 nginx 启动脚本
+## 35）编写 nginx 启动脚本
 
 ```shell
 #!/bin/bash  
@@ -833,7 +833,7 @@ status)
 esac
 ```
 
-##### 36）自动对磁盘分区、格式化、挂载
+## 36）自动对磁盘分区、格式化、挂载
 
 ```shell
 #!/bin/bash  
@@ -859,7 +859,7 @@ echo '/dev/vdb1     /data    xfs    defaults        1 2'  >> /etc/fstab
 mount -a
 ```
 
-##### 37）自动优化 Linux 内核参数
+## 37）自动优化 Linux 内核参数
 
 ```shell
 #!/bin/bash  
@@ -891,7 +891,7 @@ EOF
 sysctl –p
 ```
 
-##### 38）切割 Nginx 日志文件(防止单个文件过大,后期处理很困难)
+## 38）切割 Nginx 日志文件(防止单个文件过大,后期处理很困难)
 
 ```shell
 #mkdir  /data/scripts  
@@ -906,7 +906,7 @@ kill -USR1  `cat /usr/local/nginx/logs/nginx.pid`
 0  1  *  *   *   /data/scripts/nginx_log.sh
 ```
 
-##### 39）检测 MySQL 数据库连接数量
+## 39）检测 MySQL 数据库连接数量
 
 ```shell
 #!/bin/bash  
@@ -925,7 +925,7 @@ do
 done
 ```
 
-##### 40）根据 md5 校验码,检测文件是否被修改
+## 40）根据 md5 校验码,检测文件是否被修改
 
 ```shell
 #!/bin/bash  
@@ -939,7 +939,7 @@ do
 done
 ```
 
-##### 41）检测 MySQL 服务是否存活
+## 41）检测 MySQL 服务是否存活
 
 ```shell
 #!/bin/bash  
@@ -958,7 +958,7 @@ else
 fi
 ```
 
-##### 42）备份 MySQL 的 shell 脚本(mysqldump版本)
+## 42）备份 MySQL 的 shell 脚本(mysqldump版本)
 
 ```shell
 #!/bin/bash  
@@ -975,7 +975,7 @@ date=$(date +%Y%m%d)
 mysqldump -u "$user" -p "$passwd" "$dbname" > /mysqlbackup/"$dbname"-${date}.sql
 ```
 
-##### 43）将文件中所有的小写字母转换为大写字母
+## 43）将文件中所有的小写字母转换为大写字母
 
 ```shell
 #!/bin/bash  
@@ -985,7 +985,7 @@ mysqldump -u "$user" -p "$passwd" "$dbname" > /mysqlbackup/"$dbname"-${date}.sql
 tr "[a‐z]" "[A‐Z]" < $1
 ```
 
-##### 44）非交互自动生成 SSH 密钥文件
+## 44）非交互自动生成 SSH 密钥文件
 
 ```shell
 #!/bin/bash  
@@ -995,7 +995,7 @@ rm  -rf  ~/.ssh/{known_hosts,id_rsa*}
 ssh‐keygen -t RSA -N '' -f ~/.ssh/id_rsa
 ```
 
-##### 45）检查特定的软件包是否已经安装
+## 45）检查特定的软件包是否已经安装
 
 ```shell
 #!/bin/bash  
@@ -1015,7 +1015,7 @@ do
 done
 ```
 
-##### 46）监控 HTTP 服务器的状态(测试返回码)
+## 46）监控 HTTP 服务器的状态(测试返回码)
 
 ```shell
 #!/bin/bash  
@@ -1050,7 +1050,7 @@ do
 done
 ```
 
-##### 47）自动添加防火墙规则,开启某些服务或端口(适用于 RHEL7)
+## 47）自动添加防火墙规则,开启某些服务或端口(适用于 RHEL7)
 
 ```shell
 #!/bin/bash  
@@ -1076,7 +1076,7 @@ done
 firewall‐cmd  --runtime-to-permanent
 ```
 
-##### 48）使用脚本自动创建逻辑卷
+## 48）使用脚本自动创建逻辑卷
 
 ```shell
 #!/bin/bash  
@@ -1108,7 +1108,7 @@ vgcreate $vg_name $disk
 lvcreate -L ${lv_size}M -n ${lv_name}  ${vg_name}
 ```
 
-##### 49）显示 CPU 厂商信息
+## 49）显示 CPU 厂商信息
 
 ```shell
 #!/bin/bash  
@@ -1116,7 +1116,7 @@ lvcreate -L ${lv_size}M -n ${lv_name}  ${vg_name}
 awk '/vendor_id/{print $3}' /proc/cpuinfo | uniq
 ```
 
-##### 50）删除某个目录下大小为 0 的文件
+## 50）删除某个目录下大小为 0 的文件
 
 ```shell
 #!/bin/bash  
@@ -1126,7 +1126,7 @@ dir="/var/www/html"
 find $dir -type f -size 0 -exec rm -rf {} \;
 ```
 
-##### 51）查找 Linux 系统中的僵尸进程
+## 51）查找 Linux 系统中的僵尸进程
 
 ```shell
 #!/bin/bash  
@@ -1135,7 +1135,7 @@ find $dir -type f -size 0 -exec rm -rf {} \;
 ps aux | awk '{if($8 == "Z"){print $2,$11}}'
 ```
 
-##### 52）提示用户输入年份后判断该年是否为闰年
+## 52）提示用户输入年份后判断该年是否为闰年
 
 ```shell
 #!/bin/bash  
@@ -1162,7 +1162,7 @@ else
 fi
 ```
 
-##### 53）生成随机密码(urandom 版本)
+## 53）生成随机密码(urandom 版本)
 
 ```shell
 #!/bin/bash  
@@ -1177,7 +1177,7 @@ fi
 tr -dc '_A‐Za‐z0‐9' </dev/urandom | head -c 10
 ```
 
-##### 54）生成随机密码(字串截取版本)
+## 54）生成随机密码(字串截取版本)
 
 ```shell
 #!/bin/bash  
@@ -1199,7 +1199,7 @@ done
 echo $pass
 ```
 
-##### 55）生成随机密码(UUID 版本,16 进制密码)
+## 55）生成随机密码(UUID 版本,16 进制密码)
 
 ```shell
 #!/bin/bash  
@@ -1207,7 +1207,7 @@ echo $pass
 uuidgen
 ```
 
-##### 56）生成随机密码(进程 ID 版本,数字密码)
+## 56）生成随机密码(进程 ID 版本,数字密码)
 
 ```shell
 #!/bin/bash  
@@ -1215,7 +1215,7 @@ uuidgen
 echo $$
 ```
 
-##### 57）测试用户名与密码是否正确
+## 57）测试用户名与密码是否正确
 
 ```shell
 #!/bin/bash  
@@ -1230,7 +1230,7 @@ else
 fi
 ```
 
-##### 58）循环测试用户名与密码是否正确
+## 58）循环测试用户名与密码是否正确
 
 ```shell
 #!/bin/bash  
@@ -1249,7 +1249,7 @@ done
 echo "Login Failed"
 ```
 
-##### 59）Shell 脚本的 fork 炸弹
+## 59）Shell 脚本的 fork 炸弹
 
 ```shell
 #!/bin/bash  
@@ -1259,7 +1259,7 @@ echo "Login Failed"
 .() { .|.& };.
 ```
 
-##### 60）批量下载有序文件(pdf、图片、视频等等)
+## 60）批量下载有序文件(pdf、图片、视频等等)
 
 ```shell
 #!/bin/bash  
@@ -1278,7 +1278,7 @@ done
 #curl 使用-o 选项指定下载文件另存到哪里.
 ```
 
-##### 61）显示当前计算机中所有账户的用户名称
+## 61）显示当前计算机中所有账户的用户名称
 
 ```shell
 #!/bin/bash  
@@ -1292,7 +1292,7 @@ cut -d: -f1 /etc/passwd
 sed 's/:.*//' /etc/passwd
 ```
 
-##### 62）制定目录路径,脚本自动将该目录使用 tar 命令打包备份到/data目录
+## 62）制定目录路径,脚本自动将该目录使用 tar 命令打包备份到/data目录
 
 ```shell
 #!/bin/bash  
@@ -1306,7 +1306,7 @@ else
 fi
 ```
 
-##### 63）显示进度条(回旋镖版)
+## 63）显示进度条(回旋镖版)
 
 ```shell
 #!/bin/bash  
@@ -1329,7 +1329,7 @@ do
 done
 ```
 
-##### 64）安装 LAMP 环境(yum 版本)
+## 64）安装 LAMP 环境(yum 版本)
 
 ```shell
 #!/bin/bash  
@@ -1346,7 +1346,7 @@ else
 fi
 ```
 
-##### 65）循环关闭局域网中所有主机
+## 65）循环关闭局域网中所有主机
 
 ```shell
 #!/bin/bash  
@@ -1361,7 +1361,7 @@ do
 done
 ```
 
-##### 66）获取本机 MAC 地址
+## 66）获取本机 MAC 地址
 
 ```shell
 #!/bin/bash  
@@ -1373,7 +1373,7 @@ ip a s | awk 'BEGIN{print  " 本 机 MAC 地 址 信 息 如 下 :"}/^[0‐9]/{p
 # lo 回环设备没有 MAC,因此将其屏蔽,不显示
 ```
 
-##### 67）自动配置 rsynd 服务器的配置文件 rsyncd.conf
+## 67）自动配置 rsynd 服务器的配置文件 rsyncd.conf
 
 ```shell
 #!/bin/bash  
@@ -1395,7 +1395,7 @@ dont compress   = *.gz *.tgz *.zip *.z *.Z *.rpm *.deb *.bz2
     comment = share' > /etc/rsyncd.conf
 ```
 
-##### 68）修改 Linux 系统的最大打开文件数量
+## 68）修改 Linux 系统的最大打开文件数量
 
 ```shell
 #!/bin/bash  
@@ -1407,7 +1407,7 @@ cat >> /etc/security/limits.conf <<EOF
 EOF
 ```
 
-##### 69）设置 Python 支持自动命令补齐功能
+## 69）设置 Python 支持自动命令补齐功能
 
 ```shell
 #!/bin/bash  
@@ -1434,7 +1434,7 @@ sed  -i '$a export PYTHONSTARTUP=/usr/bin/tab.py' /etc/profile
 source /etc/profile
 ```
 
-##### 70）自动修改计划任务配置文件
+## 70）自动修改计划任务配置文件
 
 ```shell
 #!/bin/bash  
@@ -1448,7 +1448,7 @@ read -p "请输入计划任务需要执行的命令或脚本:" program
 echo "$min $hour $date $month $weak $program" >> /etc/crontab
 ```
 
-##### 71）使用脚本循环创建三位数字的文本文件(111-999 的文件)
+## 71）使用脚本循环创建三位数字的文本文件(111-999 的文件)
 
 ```shell
 #!/bin/bash  
@@ -1465,7 +1465,7 @@ do
 done
 ```
 
-##### 72）找出/etc/passwd 中能登录的用户,并将对应在/etc/shadow 中第二列密码提出处理
+## 72）找出/etc/passwd 中能登录的用户,并将对应在/etc/shadow 中第二列密码提出处理
 
 ```shell
 #!/bin/bash  
@@ -1477,7 +1477,7 @@ do
 done
 ```
 
-##### 73）统计/etc/passwd 中 root 出现的次数
+## 73）统计/etc/passwd 中 root 出现的次数
 
 ```shell
 #!/bin/bash  
@@ -1486,7 +1486,7 @@ done
 awk -F: '{i=1;while(i<=NF){if($i~/root/){x++};i++}} END{print "root 出现次数为"x}' /etc/passwd
 ```
 
-##### 74）统计 Linux 进程相关数量信息
+## 74）统计 Linux 进程相关数量信息
 
 ```shell
 #!/bin/bash  
@@ -1525,7 +1525,7 @@ echo "Sleeping 进程数为:$sleeping"
 echo "Zombie 进程数为:$zombie"
 ```
 
-##### 75）从键盘读取一个论坛积分,判断论坛用户等级
+## 75）从键盘读取一个论坛积分,判断论坛用户等级
 
 ```shell
 #!/bin/bash  
@@ -1550,7 +1550,7 @@ else
 fi
 ```
 
-##### 76）判断用户输入的数据类型(字母、数字或其他)
+## 76）判断用户输入的数据类型(字母、数字或其他)
 
 ```shell
 #!/bin/bash  
@@ -1568,7 +1568,7 @@ case "$KEY" in
 esac
 ```
 
-##### 77）显示进度条(数字版)
+## 77）显示进度条(数字版)
 
 ```shell
 #!/bin/bash  
@@ -1584,7 +1584,7 @@ do
 done
 ```
 
-##### 78）打印斐波那契数列
+## 78）打印斐波那契数列
 
 ```shell
 #!/bin/bash  
@@ -1599,7 +1599,7 @@ done
 echo ${list[@]}
 ```
 
-##### 79）判断用户输入的是 Yes 或 NO
+## 79）判断用户输入的是 Yes 或 NO
 
 ```shell
 #!/bin/bash  
@@ -1617,7 +1617,7 @@ case  $sure  in
 esac
 ```
 
-##### 80）显示本机 Linux 系统上所有开放的端口列表
+## 80）显示本机 Linux 系统上所有开放的端口列表
 
 ```shell
 #!/bin/bash  
@@ -1626,7 +1626,7 @@ esac
 ss -nutlp | awk '{print $1,$5}' | awk -F"[: ]" '{print "协议:"$1,"端口号:"$NF}' | grep "[0‐9]" | uniq
 ```
 
-##### 81）将 Linux 系统中 UID 大于等于 1000 的普通用户都删除
+## 81）将 Linux 系统中 UID 大于等于 1000 的普通用户都删除
 
 ```shell
 #!/bin/bash  
@@ -1640,7 +1640,7 @@ do
 done
 ```
 
-##### 82）使用脚本开启关闭虚拟机
+## 82）使用脚本开启关闭虚拟机
 
 ```shell
 #!/bin/bash  
@@ -1678,7 +1678,7 @@ case $1 in
 esac
 ```
 
-##### 83）调整虚拟机内存参数的 shell 脚本
+## 83）调整虚拟机内存参数的 shell 脚本
 
 ```shell
 #!/bin/bash  
@@ -1706,7 +1706,7 @@ case $select in
 esac
 ```
 
-##### 84）查看 KVM 虚拟机中的网卡信息(不需要进入启动或进入虚拟机)
+## 84）查看 KVM 虚拟机中的网卡信息(不需要进入启动或进入虚拟机)
 
 ```shell
 #!/bin/bash  
@@ -1745,7 +1745,7 @@ done
 echo "+++++++++++++++++++++++++++++++++++++++++++"
 ```
 
-##### 85）不登陆虚拟机,修改虚拟机网卡 IP 地址
+## 85）不登陆虚拟机,修改虚拟机网卡 IP 地址
 
 ```shell
 #!/bin/bash  
@@ -1779,7 +1779,7 @@ fi
 awk -F= -v x=$addr '$2==x{print "完成..."}'  $mountpoint/etc/sysconfig/network‐scripts/ifcfg-$dev
 ```
 
-##### 86）破解虚拟机密码,无密码登陆虚拟机系统
+## 86）破解虚拟机密码,无密码登陆虚拟机系统
 
 ```shell
 #!/bin/bash  
@@ -1801,7 +1801,7 @@ guestmount -d $name -i $mountpoint
 sed -i "/^root/s/x//" $mountpoint/etc/passwd
 ```
 
-##### 87）Shell 脚本对信号的处理,执行脚本后,按键盘 Ctrl+C 无法终止的脚本
+## 87）Shell 脚本对信号的处理,执行脚本后,按键盘 Ctrl+C 无法终止的脚本
 
 ```shell
 #!/bin/bash  
@@ -1817,7 +1817,7 @@ do
 done
 ```
 
-##### 88）一键部署 memcached
+## 88）一键部署 memcached
 
 ```shell
 #!/bin/bash  
@@ -1833,7 +1833,7 @@ make
 make install
 ```
 
-##### 89）一键配置 VNC 远程桌面服务器(无密码版本)
+## 89）一键配置 VNC 远程桌面服务器(无密码版本)
 
 ```shell
 #!/bin/bash  
@@ -1848,7 +1848,7 @@ x0vncserver AcceptKeyEvents=0 AlwaysShared=1 \
 AcceptPointerEvents=0 SecurityTypes=None  rfbport=5908
 ```
 
-##### 90）关闭 SELinux
+## 90）关闭 SELinux
 
 ```shell
 #!/bin/bash  
@@ -1857,7 +1857,7 @@ sed -i  '/^SELINUX/s/=.*/=disabled/' /etc/selinux/config
 setenforce 0
 ```
 
-##### 91）查看所有虚拟机磁盘使用量以及CPU使用量信息
+## 91）查看所有虚拟机磁盘使用量以及CPU使用量信息
 
 ```shell
 #!/bin/bash  
@@ -1867,7 +1867,7 @@ read -n1 "按任意键继续" key
 virt‐top
 ```
 
-##### 92）使用 shell 脚本打印图形
+## 92）使用 shell 脚本打印图形
 
 ```shell
 #!/bin/bash  
@@ -1916,7 +1916,7 @@ do
 done
 ```
 
-##### 93）根据计算机当前时间,返回问候语,可以将该脚本设置为开机启动
+## 93）根据计算机当前时间,返回问候语,可以将该脚本设置为开机启动
 
 ```shell
 #!/bin/bash  
@@ -1935,7 +1935,7 @@ echo "当前时间是:$(date +"%Y‐%m‐%d %H:%M:%S")"
 echo -e "\033[34m$msg\033[0m"
 ```
 
-##### 94）读取用户输入的账户名称,将账户名写入到[数组](https://edu.csdn.net/course/detail/40020?utm_source=glcblog&spm=1001.2101.3001.7020)保存
+## 94）读取用户输入的账户名称,将账户名写入到[数组](https://edu.csdn.net/course/detail/40020?utm_source=glcblog&spm=1001.2101.3001.7020)保存
 
 ```shell
 #!/bin/bash  
@@ -1957,7 +1957,7 @@ echo "总账户名数量:${#name[*]}"
 echo "${name[@]}"
 ```
 
-##### 95）判断文件或目录是否存在
+## 95）判断文件或目录是否存在
 
 ```shell
 #!/bin/bash  
@@ -1980,7 +1980,7 @@ else
 fi
 ```
 
-##### 96）打印各种格式的时间
+## 96）打印各种格式的时间
 
 ```shell
 #!/bin/bash  
@@ -2012,7 +2012,7 @@ echo "组合显示"
 date +"%Y%m%d %H:%M:%S"
 ```
 
-##### 97）使用 egrep 过滤 MAC 地址
+## 97）使用 egrep 过滤 MAC 地址
 
 ```shell
 #!/bin/bash  
@@ -2022,7 +2022,7 @@ date +"%Y%m%d %H:%M:%S"
 egrep "[0‐9a‐fA‐F]{2}(:[0‐9a‐fA‐F]{2}){5}" $1
 ```
 
-##### 98）统计双色球各个数字的中奖概率
+## 98）统计双色球各个数字的中奖概率
 
 ```shell
 #!/bin/bash  
@@ -2039,7 +2039,7 @@ awk '{print $1"\n"$2"\n"$3"\n"$4"\n"$5"\n"$6}' 1.txt | sort | uniq -c | sort
 awk '{print $7}' 1.txt | sort | uniq -c | sort
 ```
 
-##### 99）生成签名私钥和证书
+## 99）生成签名私钥和证书
 
 ```shell
 #!/bin/bash  
@@ -2056,7 +2056,7 @@ openssl genrsa -out ${dir}/${name}.key
 openssl req -new -x509 -key ${dir}/${name}.key -subj "/CN=common" -out ${dir}/${name}.crt
 ```
 
-##### 100）使用awk编写的wc程序
+## 100）使用awk编写的wc程序
 
 ```shell
 #!/bin/bash  

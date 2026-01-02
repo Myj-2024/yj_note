@@ -1,3 +1,7 @@
+---
+typora-copy-images-to: ./
+---
+
 # 网络文件系统NFS原理与实践
 
 > 本文转载自：公众号【民工哥技术之路】的文章--[玩转企业常见应用与服务系列（一）：网络文件系统 NFS 原理与实践](https://mp.weixin.qq.com/s?__biz=MzI0MDQ4MTM5NQ==&mid=2247546196&idx=2&sn=eac4b43fe3b8c438c876ec6bc1437645&chksm=e9185048de6fd95eb5f864cd742de9d5f53b5e0aaa273b1cf8d0d170a81b0f5efd5afc2e932e&scene=21#wechat_redirect)
@@ -22,7 +26,7 @@ NFS服务器可以让PC将网络中的NFS服务器共享的目录挂载到本地
 
 #### NFS工作流程
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/tuSaKc6SfPr9JBO3bWM960jEg9d39icXDlzbk85ABCkaJgQsAr4rZ6ES1iaJC9sIHY4VKF085Qrulz8lKiaYwQrgQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0)
+![图片](https://bu.dusays.com/2026/01/02/6957851b8b750.png)
 
 - 1.首先服务器端启动RPC服务，并开启111端口
 - 2.服务器端启动NFS服务，并向RPC注册端口信息
@@ -32,7 +36,7 @@ NFS服务器可以让PC将网络中的NFS服务器共享的目录挂载到本地
 
 #### 挂载原理
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/tuSaKc6SfPr9JBO3bWM960jEg9d39icXDLiaKjuKEU9rEhuYa02sjn8WWn2wp4Q0m5g42ftDg5zKthnNzP5M9qHQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=1)当我们在NFS服务器设置好一个共享目录/opt后，其他的有权访问NFS服务器的NFS客户端就可以将这个目录挂载到自己文件系统的某个挂载点，这个挂载点可以自己定义，如上图客户端A与客户端B挂载的目录就不相同。并且挂载好后我们在本地能够看到服务端/opt的所有数据。
+![图片](https://bu.dusays.com/2026/01/02/695785345f400.webp)当我们在NFS服务器设置好一个共享目录/opt后，其他的有权访问NFS服务器的NFS客户端就可以将这个目录挂载到自己文件系统的某个挂载点，这个挂载点可以自己定义，如上图客户端A与客户端B挂载的目录就不相同。并且挂载好后我们在本地能够看到服务端/opt的所有数据。
 
 三种挂载方式：
 
